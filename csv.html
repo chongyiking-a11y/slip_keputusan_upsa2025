@@ -377,10 +377,12 @@ function genUlasanRingkas(s, subjects){
   if (percentage >= 82) {
     ringkas = "Pencapaian cemerlang. Teruskan usaha!";
   } else if (percentage >= 66) {
-    ringkas = "Pencapaian baik. Boleh tingkatkan lagi.";
+    ringkas = "Pencapaian terpuji. Boleh tingkatkan lagi.";
   } else if (percentage >= 50) {
-    ringkas = "Pencapaian memuaskan. Perlu lebih usaha.";
+    ringkas = "Pencapaian baik. Perlu lebih usaha.";
   } else if (percentage >= 35) {
+    ringkas = "Pencapaian memuaskan. Perlu lebih usaha.";
+  } else if (percentage >= 20) {
     ringkas = "Pencapaian minimum. Perlu bimbingan.";
   } else {
     ringkas = "Perlu bimbingan rapi dan latihan tambahan.";
@@ -394,8 +396,8 @@ function genUlasanRingkas(s, subjects){
     const markNum = Number(mark) || 0;
     const gg = (g && g.trim()) ? g.trim().toUpperCase() : autoGrade(mark);
     
-    if(markNum >= 85) cemerlang.push(label);
-    if(markNum < 40 && markNum > 0) lemah.push(label);
+    if(markNum >= 82) cemerlang.push(label);
+    if(markNum < 20 && markNum > 0) lemah.push(label);
   }
 
   // Construct feedback
